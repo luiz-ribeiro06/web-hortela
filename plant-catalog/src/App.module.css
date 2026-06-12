@@ -1,0 +1,32 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  height: 100px;
+  background-color: #4ea93b;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 20px;
+}
+
+.header input {
+  position: absolute;
+  right: 20px;
+  padding: 5px;
+  font-size: 15px;
+  outline: none;
+  border: 0;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.footer {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 40px;
+  margin-top: 40px;
+  background-color: #4ea93b;
+  font-weight: bold;
+}

@@ -1,0 +1,32 @@
+.menuButton {
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  padding-top: 80px;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.open {
+  left: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  background-color: white;
+}
