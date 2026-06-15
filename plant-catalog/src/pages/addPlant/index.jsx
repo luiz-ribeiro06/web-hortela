@@ -1,28 +1,107 @@
+import { useState } from "react";
 import styles from "./addPlant.module.css";
 
 export const AddPlant = () => {
+  const [nome, setNome] = useState("");
+  const [especie, setEspecie] = useState("");
+  const [dataPlantio, setDataPlantio] = useState("");
+
+  const getFrequency = (species) => {
+    const frequencies = {
+      samambaia: 2,
+      jiboia: 7,
+      espada: 14,
+      suculenta: 14,
+      costela: 5,
+    };
+
+    return frequencies[species];
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await fetch("http://localhost:3001/myPlants", {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify({
+        nome,
+        especie,
+        dataPlantio,
+        frequenciaRega: getFrequency(especie),
+      }),
+    });
+
+    alert("Planta cadastrada!");
+  };
+
   return (
     <div className={styles.container}>
       <h1>Adicionar Planta</h1>
 
-      <form className={styles.form}>
-        <label htmlFor="name">Nome da Planta</label>
-        <input id="name" type="text" placeholder="Digite o nome da planta" />
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit}
+      >
+        <label>Nome da Planta</label>
 
-        <label htmlFor="species">Espécie</label>
-        <select id="species">
-          <option value="">Selecione uma espécie</option>
-          <option value="samambaia">Samambaia</option>
-          <option value="jiboia">Jiboia</option>
-          <option value="espada">Espada-de-São-Jorge</option>
-          <option value="suculenta">Suculenta</option>
-          <option value="costela">Costela-de-Adão</option>
+        <input
+          value={nome}
+          onChange={(e) =>
+            setNome(e.target.value)
+          }
+        />
+
+        <label>Espécie</label>
+
+        <select
+          value={especie}
+          onChange={(e) =>
+            setEspecie(e.target.value)
+          }
+        >
+          <option value="">
+            Selecione
+          </option>
+
+          <option value="samambaia">
+            Samambaia
+          </option>
+
+          <option value="jiboia">
+            Jiboia
+          </option>
+
+          <option value="espada">
+            Espada-de-São-Jorge
+          </option>
+
+          <option value="suculenta">
+            Suculenta
+          </option>
+
+          <option value="costela">
+            Costela-de-Adão
+          </option>
         </select>
 
-        <label htmlFor="plantingDate">Data de Plantio</label>
-        <input id="plantingDate" type="date" />
+        <label>Data de Plantio</label>
 
-        <button type="submit">Adicionar</button>
+        <input
+          type="date"
+          value={dataPlantio}
+          onChange={(e) =>
+            setDataPlantio(e.target.value)
+          }
+        />
+
+        <button type="submit">
+          Adicionar
+        </button>
       </form>
     </div>
   );

@@ -15,6 +15,7 @@ export const Menu = () => {
         <Link to="/">Home</Link>
         <Link to="/about">Sobre</Link>
         <Link to="/addPlant">Adicionar Planta</Link>
+        <Link to="/myPlants">Minhas Plantas</Link>
       </div>
     </>
   );

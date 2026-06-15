@@ -1,3 +1,4 @@
+const connectDB = require("./db");
 const express = require("express");
 const cors = require("cors");
 
@@ -43,6 +44,7 @@ app.get("/plants/:id", async (req, res) => {
   }
 });
 
+connectDB();
 
 app.listen(3001, () => {
   console.log("Servidor rodando em http://localhost:3001");

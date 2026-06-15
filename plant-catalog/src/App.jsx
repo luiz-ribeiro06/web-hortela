@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { About } from "./pages/about";
-import { Menu } from "./components/Menu";
+import { Menu } from "./components/menu";
 import { AddPlant } from "./pages/addPlant";
 import { ListPlants } from "./pages/listPlants";
 import { PlantsId } from "./pages/plantsId";
+import { MyPlants } from "./pages/myPlants";
 import styles from "./App.module.css";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/plantsId/:id" element={<PlantsId />} />
         <Route path="/about" element={<About />} />
         <Route path="/addPlant" element={<AddPlant />} />
+        <Route path="/myPlants" element={<MyPlants />} />
       </Routes>
 
       <footer className={styles.footer}>
