@@ -13,7 +13,7 @@ app.use(express.json());
 // Servir arquivos do Vite buildado
 app.use(express.static(path.join(__dirname, "../dist")));
 
-const API_TOKEN = "SEU_TOKEN";
+const API_TOKEN = "usr-2tCmVVDGjMBhVALfOSGzPVjcMKd15rqlszdBlzQa8fc";
 
 app.get("/plants", async (req, res) => {
   try {
