@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
   console.log("Enviando planta...");
 
   const response = await fetch(
-    "http://localhost:3001/myPlants",
+    "https://jardim-verde-hatl.onrender.com/myPlants",
     {
       method: "POST",
       headers: {
