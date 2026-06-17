@@ -97,7 +97,8 @@ app.put("/myPlants/:id/water", async (req, res) => {
 app.get("/teste", (req, res) => {
   res.send("funcionou");
 });
-app.get("*", (req, res) => {
+
+app.get("(.*)", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
