@@ -5,7 +5,7 @@ export const MyPlants = () => {
   const [plants, setPlants] = useState([]);
 
   const loadPlants = async () => {
-    const res = await fetch("http://localhost:3001/myPlants");
+    const res = await fetch("https://jardim-verde-hatl.onrender.com/myPlants");
     const data = await res.json();
     setPlants(data);
   };
@@ -15,7 +15,7 @@ export const MyPlants = () => {
   }, []);
 
   const deletePlant = async (id) => {
-    await fetch(`http://localhost:3001/myPlants/${id}`, {
+    await fetch(`https://jardim-verde-hatl.onrender.com/myPlants/${id}`, {
       method: "DELETE",
     });
 
@@ -23,7 +23,7 @@ export const MyPlants = () => {
   };
 
   const waterPlant = async (id) => {
-    await fetch(`http://localhost:3001/myPlants/${id}/water`, {
+    await fetch(`https://jardim-verde-hatl.onrender.com/myPlants/${id}/water`, {
       method: "PUT",
     });
 
@@ -35,7 +35,7 @@ export const MyPlants = () => {
 
     if (!novoNome) return;
 
-    await fetch(`http://localhost:3001/myPlants/${plant._id}`, {
+    await fetch(`https://jardim-verde-hatl.onrender.com/myPlants/${plant._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
