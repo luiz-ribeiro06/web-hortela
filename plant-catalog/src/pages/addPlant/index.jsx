@@ -18,26 +18,31 @@ export const AddPlant = () => {
     return frequencies[species];
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    await fetch("http://localhost:3001/myPlants", {
+  console.log("Enviando planta...");
+
+  const response = await fetch(
+    "http://localhost:3001/myPlants",
+    {
       method: "POST",
-
       headers: {
         "Content-Type": "application/json",
       },
-
       body: JSON.stringify({
         nome,
         especie,
         dataPlantio,
         frequenciaRega: getFrequency(especie),
       }),
-    });
+    }
+  );
 
-    alert("Planta cadastrada!");
-  };
+  console.log(response.status);
+
+  alert("Planta cadastrada!");
+};
 
   return (
     <div className={styles.container}>

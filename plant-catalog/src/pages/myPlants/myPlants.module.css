@@ -1,0 +1,31 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.card {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.warning {
+  color: red;
+  font-weight: bold;
+}
+
+.ok {
+  color: green;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: #4ea93b;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
