@@ -1,4 +1,4 @@
-export const BASE_URL_API = 'http://localhost:3001/plants';
+export const BASE_URL_API = 'https://jardim-verde-hatl.onrender.com/plants';
 
 
 
